@@ -1,0 +1,360 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+
+html {
+    font-family: 'Courier New', Courier, monospace;
+}
+  @media screen and (prefers-color-scheme: light) {
+    body {
+      background-color: white;
+      color: black;
+    }
+  }
+
+.container {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.off-canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background-color: #f2f2f2;
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out;
+	transform: translateX(-250px);
+}
+
+.off-canvas.show {
+	transform: translateX(0);
+}
+
+.off-canvas-content {
+	padding: 10px;
+}
+
+button {
+    cursor:pointer;
+    
+}
+
+.citydropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 40vh;
+    font-size: 15px;
+}
+
+.off-canvas {
+    color: black;
+}
+
+#city-select{
+    margin: 20px;
+    padding-top: 2.7px;
+    padding-bottom: 2.7px;
+    text-align: center;
+}
+
+#config-toggle{
+    color: black;
+}
+
+#config-close{
+    border: none;
+    margin-top: 8px;
+    margin-left: 225px;
+}
+
+#config-section {
+    text-align: right;
+    font-size: 15.33px;
+    padding-left: 20px;
+    padding-right: 25px;
+    margin-right: 20px;
+}
+
+#config-section h2{
+    text-align: right;
+    font-size: 25px;
+    margin-bottom: 0;
+    text-decoration: underline ;
+}
+
+#weather-section {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    margin-left: 90px;
+}
+
+#weather-city{
+    font-size: 40px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+#weather-date{
+    font-size: 30px;  
+}
+
+#weather-temp{
+    font-size: 70px;
+    font-weight: bolder;
+}
+
+#weather-icon{
+    padding-bottom: 15px;
+    width: 20%;
+}
+
+#weather-min-temp{
+    font-size: 30px; 
+
+}
+#weather-max-temp{
+    font-size: 30px; 
+
+}
+#weather-precipitation{
+    font-size: 30px; 
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    bottom: 0;
+    justify-content: space-around;
+  }
+
+.glow-on-hover {
+    width: 40px;
+    height: 28px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover2 {
+    width: 40px;
+    height: 28px;
+    border: none;
+    outline: none;
+    color: #fff;
+
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover2:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover2:active {
+    color: #000
+}
+
+.glow-on-hover2:active:after {
+    background: transparent;
+}
+
+.glow-on-hover2:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover2:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #424242;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+/* ------------MEDIA QUERRY STYLE------------*/ 
+/*On screens that are 992px or less, set the background color to blue */
+    @media screen and (min-width: 1000px) {
+        #city-select{
+            font-size: 20px;
+        }
+
+        #config-toggle{
+            font-size: 20px;
+        }
+        #config-close{
+            margin-left: 225px;
+            margin-top: 9px;
+        }
+        
+        #config-section {
+            text-align: right;
+            font-size: 15.33px;
+            padding-left: 20px;
+            padding-right: 25px;
+            margin-right: 20px;
+        }
+        .citydropdown{
+            font-size: 35px;    
+            min-height: 30vh;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            margin-bottom: 0;
+        }
+        #weather-section {
+            display: flex;
+            justify-content: center;
+            text-align: justify;
+        }
+
+        #weather-info {
+            line-height: 1;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: justify;
+            width: 500px; /* adjust as necessary */
+            margin: 0 auto;
+          }
+
+        #weather-city{
+            padding-bottom: 10px;
+            font-size: 60px;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        
+        #weather-date{
+            padding-bottom: 5px;
+            font-size: 30px;  
+        }
+
+        #weather-icon{
+            padding-bottom: 15px;
+            width: 25%;
+            height: fit-content;
+        }
+        
+        #weather-temp{
+            padding-bottom: 10px;
+            font-size: 90px;
+            font-weight: bolder;
+        }
+        
+        #weather-min-temp{
+            padding-bottom: 10px;
+            font-size: 30px; 
+        
+        }
+        #weather-max-temp{
+            padding-bottom: 10px;
+            font-size: 30px; 
+        
+        }
+        #weather-precipitation{
+            font-size: 30px; 
+        }
+        footer{
+        font-size: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        }
+
+        .glow-on-hover {
+            width: 90px;
+            height: 35px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+    }

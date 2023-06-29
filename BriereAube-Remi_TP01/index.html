@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP01</title>
+    <script type="module" src="./assets/js/App.js"defer></script>
+    <script type="module" src="./assets/js/UrlBuilder.js"></script>
+    <script src="./assets/js/ForecastModel.js"defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.0/dist/js.cookie.min.js"></script>
+    
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <main>
+      <div>
+        <div class="citydropdown">
+          <!-- Selection de la ville -->
+          <label for="city-select">Sélectionner une ville du Québec:</label>
+          <select id="city-select">
+            <option value="">--</option>
+            <option value="46.81/-72.21">Québec</option>
+            <option value="45.38/-73.48">Montréal</option>
+            <option value="45.40/-71.90">Sherbrooke</option>
+            <option value="45.47/-75.70">Gatineau</option>
+          </select>
+          <!-- Configurations des button -->
+          <button id="config-toggle" onclick="toggleConfig()" class="glow-on-hover" type="button">⚙️</button>
+        </div>
+        <!-- Off-canvas configurations -->
+        <div id="config-section" class="off-canvas">
+          <button id="config-close" onclick="closeConfig()" class="glow-on-hover2" type="button" >❌</button>
+          <h2>Préférences</h2>
+          <div>
+            <label for="date-toggle">Montrer la date:</label>
+            <input type="checkbox" id="date-toggle" checked onchange= "toggleWeatherInfo()">
+          </div>
+          <div>
+            <label for="min-temp-toggle">Température minimum:</label>
+            <input type="checkbox" id="min-temp-toggle" checked onchange= "toggleWeatherInfo()">
+          </div>
+          <div>
+            <label for="max-temp-toggle">Température maximum:</label>
+            <input type="checkbox" id="max-temp-toggle" checked onchange= "toggleWeatherInfo()">
+          </div>
+          <div>
+            <label for="precipitation-toggle">Chance de précipitation:</label>
+            <input type="checkbox" id="precipitation-toggle" checked onchange = "toggleWeatherInfo()">
+          </div>
+        </div>
+        <!-- Séction Température -->
+        <div id="weather-section">
+          <div id="weather-info">
+            <div id="weather-city"></div>
+            <div id="weather-date"></div>
+            <div id="weather-temp"></div>
+            <img id="weather-icon" src="/assets/icons/API_MÉTÉO_QUÉBEC.png" alt="logo"></img>
+            <div id="weather-min-temp"></div>
+            <div id="weather-max-temp"></div>
+            <div id="weather-precipitation"></div>
+          </div>
+        </div>
+      </main>
+    <!-- Footer -->
+    <footer>
+        <p>Rémi Brière-Aubé</p>
+        
+    </footer>
+    
+</body>
+</html>
